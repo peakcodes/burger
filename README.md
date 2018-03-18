@@ -32,15 +32,14 @@ models
   burger.js
  
 public
-  assets
-    CSS
+  -assets
+    -CSS
       style.css
-    Img
  
 views
   index.handlebars
-  layouts
-    main.handlebars
+  -layouts
+    -main.handlebars
 
 package.json
 
