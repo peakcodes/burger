@@ -20,24 +20,32 @@ Folder:
 config
   connection.js
   orm.js
+
 controllers
   burgersController.js
+
 db
   schema.sql
   seeds.sql
+ 
 models
   burger.js
+ 
 public
   assets
     CSS
       style.css
     Img
+ 
 views
   index.handlebars
   layouts
     main.handlebars
+
 package.json
+
 package-lock.json
+
 server.js
 
 This app utilizes mySQL, Node, Express, Handlebars and an ORM. 
