@@ -1,34 +1,39 @@
-<h1>My Favorite Burgers!</h1>
+<div class="row">
+  <center>
 
-<h2>What kind of Burger are you craving?</h2>
+<h3>What kind of Burger are you craving?</h3>
 
-<ul>
-    {{#each Burgers}}
-   {{#unless devour}}
-   {{> burgers/burger-block devour=true}}
-   {{/unless}}
-   {{/each}}
-</ul>
+{{!-- Current and added burger table --}}
+<br>
+{{#each burgers}}
+          {{#unless devoured}}
+          <form action="burgers/{{id}}" method="POST">
+            <div class="input-burger">
+              <li class="form-control">{{id}}. {{burger_name}}</li>
+                <span class="input-burger-btn">
+                  <button class="btn btn-success devoured-button" type="success">Add to list!</button>
+                </span>
+            </div>
+          </form>
+          {{/unless}}
+        {{/each}}
 
-<h2>Burgers you have devoured!</h2>
+{{!-- Devour side --}}
 
-<ul>
-    {{#each burgers}}
-    {{#if devour}}
-    {{>burgers/burger-block devour=false}}
-    {{#if}}
-    {{/each}}
-</ul>
-{{!-- create form and button and devour--}}
-<h2>Add a Burger</h2>
-<form class="create-form">
 
-<div class="form-group">
-    <label for="burg">Type of Burger:</label>
-    <input type="text" id="burg" name="burger_name">
+{{#each burgers}}
+{{#if this.devoured}}
+
+<div class="input-burger">
+    <li class"form-control">{{this.id}}. {{this.burger_name}}</li>
+
+    <span class="input-burger-btn">
+        <button class="btn btn-info eat-button" type="submit">Devour it</button>
+    </span>
 </div>
-<button type="submit"> Add Burger</button>
 
-</form>
-{{!-- INSERT CODE TO PUSH TO NEW TABLE FOR DEVOUR --}}
+{{/if}}
+{{/each}}
+</div>
+</center>
 </div>

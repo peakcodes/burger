@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 
-var PORT = process.env.PORT || 8080;
+
+var PORT = process.env.PORT || 3000;
 // CAN I MAKE THIS ANYTHING?
 
 var app = express();
@@ -17,11 +18,11 @@ app.use(bodyParser.json());
 
 var exhps = require("express-handlebars");
 
-app.enginge("handlebars", exhps({ defaultLayout: "main" }));
-app.set("view enginge", "handlebars");
+app.engine("handlebars", exhps({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // import routes and give the server access to them.
-var routes = require("./controllers/burger_Controller.js");
+var routes = require("./controllers/burger_controller.js");
 
 app.use(routes);
 
